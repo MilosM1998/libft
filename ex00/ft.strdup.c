@@ -25,18 +25,18 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char ft_strcpy(char *dest, char *src)
+char *ft_strcpy(char *dest, char *src)
 {
 	int i;
 
 	i = 0;
-	while(dest[i] != '\0' && src[i] != '\0')
+	while(src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';
-	return (*dest);
+	return (dest);
 }
 
 char	*ft_strdup(char *src)
@@ -60,8 +60,9 @@ int main()
 	char str[] = "Testing";
 	char *new = ft_strdup(str);
 	if(new == NULL)
-		printf("%s", str);
+		printf("You have an mistake");
 	else
 		printf("%s", new);
+		free(new);
 	return (0);	
 }
