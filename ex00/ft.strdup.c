@@ -63,6 +63,5 @@ int main()
 		printf("You have an mistake");
 	else
 		printf("%s", new);
-		free(new);
 	return (0);	
 }
