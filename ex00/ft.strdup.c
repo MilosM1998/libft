@@ -45,7 +45,7 @@ char	*ft_strdup(char *src)
 	char *dup;
 
 	len = ft_strlen(src);
-	dup = (char *)malloc(len + 1);
+	dup = (char *)malloc(sizeof(char) * (len + 1));
 	
 	if(dup == NULL)
 		return NULL;
