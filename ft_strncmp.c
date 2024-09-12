@@ -23,15 +23,17 @@ int	ft_strncmp(const char *str1, const char *str2, size_t n)
 	{
 		i++;
 	}
-	return (str1[i] - str2[i]);
+	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 }
-/*#include <stdio.h>
+/*#include <bsd/string.h>
+#include <stdio.h>
 int main(int argc, char **argv)
 {
 	if(argc > 1)
 	{
 		int dif = ft_strncmp(argv[1], argv[2], 3);
-		printf("%d", dif);
+		int dif2 = strncmp(argv[1], argv[2], 3);
+		printf("org:%d\nmy:%d\n", dif, dif2);
 	}
 	else
 		return 0;

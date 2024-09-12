@@ -21,17 +21,21 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i++;
 	}
+	if (c == '\0')
+		return ((char *)&s[i]);
 	return (0);
 }
 /*#include <stdio.h>
-#include <string.h>
+#include <bsd/string.h>
 
 int main()
 {
 	char *str;
 	char *ptr;
-	str = "testing";
-	ptr = ft_strchr(str, 'n');
-
-	printf("%s", ptr);
+	char *ptr2;
+	char *str2 = "testingsd";
+	str = "testingsd";
+	ptr = ft_strchr(str, '\0');
+	ptr2 = strchr(str2, '\0');
+	printf("org: %p\nMy:%p\n", ptr, ptr2);
 }*/

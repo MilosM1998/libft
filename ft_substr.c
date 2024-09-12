@@ -16,26 +16,22 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t			i;
 	char			*subs;
-	unsigned int	s_len;
+	size_t			s_len;
 
 	i = 0;
-	s_len = 0;
-	if (*s == '\0')
+	s_len = ft_strlen(s);
+	if (!s)
 		return (NULL);
-	while (s[s_len] != '\0')
-		s_len++;
 	if (start >= s_len)
-		return (NULL);
+		return ("");
 	subs = malloc((sizeof(char) * len + 1));
-	if (subs == NULL)
+	if (!subs)
 		return (NULL);
 	if (len > (s_len - start))
 		len = s_len - start;
 	while (i < len)
 	{
-		subs[i] = s[start];
-		i++;
-		start++;
+		subs[i++] = s[start++];
 	}
 	subs[i] = '\0';
 	return (subs);
@@ -45,5 +41,6 @@ int main()
 {
 	char *str = "This is a test.";
 	char *dup = ft_substr(str, 5 , 15);
-	printf("%s", dup);
+	printf("%s\n", dup);
+	free(dup);
 }*/

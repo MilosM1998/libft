@@ -38,7 +38,8 @@ char	*ft_itoa(int n)
 	int		len;
 	int		negative;
 	char	*str;
-
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	n_check(&len, &n, &negative);
 	str = (char *)malloc(sizeof(char) * (len + negative + 1));
 	if (!str)
@@ -61,11 +62,13 @@ char	*ft_itoa(int n)
 	return (str);
 }
 /*#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
 int main()
 {
-	int n = 123123;
+	int n = INT_MIN;
 	char *s;
 	s = ft_itoa(n);
-	printf("%s", s);
+	printf("my:%s\n", s);
 	free(s);
 }*/

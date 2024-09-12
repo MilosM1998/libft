@@ -22,7 +22,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	i = 0;
 	end = ft_strlen(s1);
-	if (*s1 == '\0' || *set == '\0')
+	if (!s1 || !set)
 		return (NULL);
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
@@ -47,4 +47,5 @@ int main()
 	char *set = "abc";
 	char *new = ft_strtrim(str, set);
 	printf("%s", new);
+	free(new);
 }*/
