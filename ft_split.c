@@ -6,7 +6,7 @@
 /*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 21:39:18 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/14 22:07:58 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/14 22:19:54 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	word_count(char const *s, char c)
 {
 	int	count;
 	int	in_word;
-	size_t	i;
+	int	i;
 
 	count = 0;
 	in_word = 0;
@@ -82,7 +82,7 @@ int	make_split(char **split, const char *s, char c)
 			{
 				free_mem(split, j - 1);
 				return (0);
-			}	
+			}
 			start = -1;
 		}
 		i++;
