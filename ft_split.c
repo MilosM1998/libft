@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmilicev <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 21:39:18 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/11 22:42:25 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/14 19:52:36 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 static int	word_count(char const *s, char c)
 {
 	int	count;
-	int in_word;
-	int i;
+	int	in_word;
+	int	i;
 
 	count = 0;
 	in_word = 0;
@@ -31,11 +31,11 @@ static int	word_count(char const *s, char c)
 		else if (s[i] == c)
 			in_word = 0;
 		i++;
-	}	
-	return (count);	
+	}
+	return (count);
 }
 
-static char *new_str(char const *s, int start, int end)
+static char	*new_str(char const *s, int start, int end)
 {
 	char	*str;
 	int		i;
@@ -65,16 +65,17 @@ static void	free_mem(char **s, int j)
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	int i;
-	int j;
-	int start;
+	int		start;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
 	start = -1;
-	if (!s || !(split = malloc(sizeof(char *) * (word_count(s, c) + 1))))
+	split = malloc(sizeof(char *) * (word_count(s, c) + 1));
+	if (!s || !split)
 		return (NULL);
-	while(i <= ft_strlen(s))
+	while (i <= ft_strlen(s))
 	{
 		if (s[i] != c && start == -1)
 			start = i;
@@ -90,24 +91,21 @@ char	**ft_split(char const *s, char c)
 	split[j] = NULL;
 	return (split);
 }
-#include <stdio.h>
-
-int main(void)
+/*#include <stdio.h>
+int	main(void)
 {
-    char **result;
+	char	**result;
 
-    // Primer 1: osnovno deljenje
-    printf("Test 1: Podeli 'Hello world this is 42' po razmaku\n");
-    result = ft_split("Hello world this is a test", ' ');
-    for( int i = 0; result[i]; i++)
-    {
-    	printf("result[%d]%s\n", i, result[i]);
-    }
-
-    // Oslobađanje memorije nakon testa
-    for (int i = 0; result[i]; i++)
-        free(result[i]);
-    free(result);
-    return 0;
-}
-
+	// Primer 1: osnovno deljenje
+	printf("Test 1: Podeli 'Hello world this is 42' po razmaku\n");
+	result = ft_split("Hello world this is a test", ' ');
+	for (int i = 0; result[i]; i++)
+	{
+		printf("result[%d]%s\n", i, result[i]);
+	}
+	// Oslobađanje memorije nakon testa
+	for (int i = 0; result[i]; i++)
+		free(result[i]);
+	free(result);
+	return (0);
+}*/
