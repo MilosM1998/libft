@@ -16,7 +16,7 @@ static int	word_count(char const *s, char c)
 {
 	int	count;
 	int	in_word;
-	int	i;
+	size_t	i;
 
 	count = 0;
 	in_word = 0;
@@ -62,35 +62,53 @@ static void	free_mem(char **s, int j)
 	free(s);
 }
 
-char	**ft_split(char const *s, char c)
+int	make_split(char **split, const char *s, char c)
 {
-	char	**split;
 	int		start;
-	int		i;
+	size_t	i;
 	int		j;
 
 	i = 0;
 	j = 0;
 	start = -1;
-	split = malloc(sizeof(char *) * (word_count(s, c) + 1));
-	if (!s || !split)
-		return (NULL);
 	while (i <= ft_strlen(s))
 	{
-		if (s[i] != c && start == -1)
+		if (s[i] != c && start == -1 && s[i])
 			start = i;
 		if ((s[i] == c || s[i] == '\0') && start != -1)
 		{
 			split[j++] = new_str(s, start, i);
 			if (!split[j - 1])
+			{
 				free_mem(split, j - 1);
+				return (0);
+			}	
 			start = -1;
 		}
 		i++;
 	}
 	split[j] = NULL;
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**split;
+
+	if (!s)
+		return (NULL);
+	split = malloc(sizeof(char *) * (word_count(s, c) + 1));
+	if (!split)
+		return (NULL);
+	if (!make_split(split, s, c))
+		return (NULL);
 	return (split);
 }
+
+// int main ()
+// {
+// 	ft_split(",,,\0", ',');
+// }
 /*#include <stdio.h>
 int	main(void)
 {
