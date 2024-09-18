@@ -22,5 +22,15 @@ t_list	*ft_lstnew(void *content)
 	new->next = NULL;
 	return (new);
 }
+#include <stdio.h>
+int	main()
+{
+	t_list *test;
+
+	char *str = "Hello";
+
+	test = ft_lstnew(str);
+	printf("%s\n", (char *)test->content);
+}
 
 
