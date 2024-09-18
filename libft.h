@@ -22,6 +22,8 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+t_list	*ft_lstadd(void *content);
+
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_toupper(int c);
