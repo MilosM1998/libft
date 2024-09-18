@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmilicev <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 16:23:28 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/02 17:27:30 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/18 19:35:01 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
 	unsigned char	uc;
-	int		i;
+	int				i;
 
 	i = 0;
 	uc = (unsigned char)c;
