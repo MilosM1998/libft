@@ -20,19 +20,23 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	temp = (unsigned char *)dest;
 	source = (const unsigned char *)src;
+	i = 0;
 	if (!dest && !src && n > 0)
 		return (NULL);
 	if (dest == src && n == 0)
 		return (dest);
 	if (source < temp)
 	{
-		i = n;
-		while (i-- > 0)
-			temp[i] = source[i];
+		while (n-- > 0)
+			temp[n] = source[n];
 	}
 	else
 	{
-		ft_strlcpy(dest, src, n);
+		while (i < n)
+		{
+			temp[i] = source[i];
+			i++;
+		}
 	}
 	return (dest);
 }
