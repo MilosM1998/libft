@@ -6,7 +6,7 @@
 #    By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/07 14:09:47 by mmilicev          #+#    #+#              #
-#    Updated: 2024/09/18 22:30:54 by mmilicev         ###   ########.fr        #
+#    Updated: 2024/09/19 14:04:24 by mmilicev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,12 +24,12 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen
 
 OBJ = $(SRC:.c=.o)
 
-BONUS_SRC = ft_lstnew.c
+BONUS_SRC = ft_lstadd.c
 
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 $(NAME): $(OBJ)
-	$(AR) -r $@ $?
+	$(AR) -r $(OBJ)
 
 %.o: %.c
 	$(CC) -c  $(CFLAGS) $?
@@ -37,10 +37,10 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 bonus: $(OBJ) $(BONUS_OBJ)
-	$(AR) -r $@ $?
+	$(AR) -r $(OBJ) $(BONUS_OBJ)
 
 clean: 
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
@@ -48,5 +48,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
-

@@ -6,7 +6,7 @@
 /*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 21:39:18 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/14 22:19:54 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:05:30 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	free_mem(char **s, int j)
 	free(s);
 }
 
-int	make_split(char **split, const char *s, char c)
+static int	make_split(char **split, const char *s, char c)
 {
 	int		start;
 	size_t	i;
