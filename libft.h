@@ -6,7 +6,7 @@
 /*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:06:51 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/19 14:02:36 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:31:12 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-<<<<<<< HEAD
 t_list				*ft_lstadd(void *content);
-=======
-t_list	*ft_lstadd(void *content);
->>>>>>> 04c79ad57bca172a903892147eb4e23cf4250e80
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
