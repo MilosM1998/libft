@@ -104,26 +104,14 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (split);
 }
-
-// int main ()
-// {
-// 	ft_split(",,,\0", ',');
-// }
 /*#include <stdio.h>
-int	main(void)
+int	main()
 {
 	char	**result;
 
-	// Primer 1: osnovno deljenje
-	printf("Test 1: Podeli 'Hello world this is 42' po razmaku\n");
 	result = ft_split("Hello world this is a test", ' ');
 	for (int i = 0; result[i]; i++)
 	{
 		printf("result[%d]%s\n", i, result[i]);
 	}
-	// Oslobađanje memorije nakon testa
-	for (int i = 0; result[i]; i++)
-		free(result[i]);
-	free(result);
-	return (0);
 }*/

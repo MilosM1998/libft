@@ -33,7 +33,7 @@ static void	n_check(int *len, int *n, int *negative)
 	}
 }
 
-char	*new_str(char *str, int len, int negative, int n)
+static char		*new_str(char *str, int len, int negative, int n)
 {
 	while (len > 0)
 	{
