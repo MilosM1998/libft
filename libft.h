@@ -22,7 +22,11 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+<<<<<<< HEAD
 t_list				*ft_lstadd(void *content);
+=======
+t_list	*ft_lstadd(void *content);
+>>>>>>> 04c79ad57bca172a903892147eb4e23cf4250e80
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);

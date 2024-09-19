@@ -29,7 +29,11 @@ BONUS_SRC = ft_lstadd.c
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 $(NAME): $(OBJ)
+<<<<<<< HEAD
 	$(AR) -r $(OBJ)
+=======
+	$(AR) -rcs $@ $?
+>>>>>>> 04c79ad57bca172a903892147eb4e23cf4250e80
 
 %.o: %.c
 	$(CC) -c  $(CFLAGS) $?
@@ -37,7 +41,11 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 bonus: $(OBJ) $(BONUS_OBJ)
+<<<<<<< HEAD
 	$(AR) -r $(OBJ) $(BONUS_OBJ)
+=======
+	$(AR) -rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+>>>>>>> 04c79ad57bca172a903892147eb4e23cf4250e80
 
 clean: 
 	rm -f $(OBJ) $(BONUS_OBJ)
@@ -47,4 +55,10 @@ fclean: clean
 
 re: fclean all
 
+<<<<<<< HEAD
 .PHONY: all clean fclean re
+=======
+.PHONY: all clean fclean re bonus
+
+
+>>>>>>> 04c79ad57bca172a903892147eb4e23cf4250e80

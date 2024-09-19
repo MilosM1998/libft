@@ -24,6 +24,7 @@ t_list	*ft_lstadd(void *content)
 	return (new);
 }
 /*#include <stdio.h>
+<<<<<<< HEAD:ft_lstnew.c
 int main()
 {
 	t_list	*test;
@@ -31,3 +32,14 @@ int main()
 	test = ft_lstadd(str);
 	printf("%s\n", test->content);
 }*/
+=======
+int	main()
+{
+	t_list *test;
+
+	char *str = "Hello";
+
+	test = ft_lstadd(str);
+	printf("%s\n", (char *)test->content);
+}*/
+>>>>>>> 04c79ad57bca172a903892147eb4e23cf4250e80:ft_lstadd.c
