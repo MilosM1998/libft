@@ -6,13 +6,13 @@
 #    By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/07 14:09:47 by mmilicev          #+#    #+#              #
-#    Updated: 2024/09/19 15:05:39 by mmilicev         ###   ########.fr        #
+#    Updated: 2024/09/19 19:51:13 by mmilicev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar
 

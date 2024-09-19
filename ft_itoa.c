@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmilicev <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 21:06:32 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/14 19:31:09 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/19 18:16:12 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	n_check(int *len, int *n, int *negative)
 	}
 }
 
-static char		*new_str(char *str, int len, int negative, int n)
+static char	*new_str(char *str, int len, int negative, int n)
 {
 	while (len > 0)
 	{
@@ -70,7 +70,8 @@ char	*ft_itoa(int n)
 }
 /*#include <stdio.h>
 #include <limits.h>
-int main()
+
+int	main(void)
 {
 	int n = INT_MAX;
 	char *s;
