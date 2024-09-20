@@ -14,7 +14,7 @@ NAME = libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-AR = ar
+AR = ar rcs
 
 SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c \
 	  ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_toupper.c  \
@@ -30,7 +30,7 @@ BONUS_SRC = ft_lstadd.c
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 $(NAME): $(OBJ)
-	$(AR) -rcs $(NAME) $(OBJ)
+	$(AR) $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) -c  $(CFLAGS) $?
@@ -38,7 +38,7 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 bonus: $(OBJ) $(BONUS_OBJ)
-	$(AR) -rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+	$(AR) $(NAME) $(OBJ) $(BONUS_OBJ)
 
 clean: 
 	rm -f $(OBJ) $(BONUS_OBJ)
