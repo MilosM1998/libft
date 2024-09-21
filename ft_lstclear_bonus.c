@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 22:41:27 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/22 00:10:05 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/22 00:27:26 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear_bonus(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;
 
@@ -21,13 +21,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	while (*lst)
 	{
 		temp = (*lst)->next;
-		del((*lst)->content);
-		free(*lst);
+		ft_lstdelone_bonus(*lst, del);
 		*lst = temp;
 	}
 	*lst = NULL;
 }
-void    delete_node(void *content)
+/* void    delete_node(void *content)
 {
 	free(content);
 }
@@ -35,21 +34,21 @@ void    delete_node(void *content)
 
 int	main(void)
 {
-	t_list  *test;
-    t_list *temp;
-    
-	test = malloc(sizeof(t_list));
-	ft_lstadd_front(&test, ft_lstnew(ft_strdup("Hello World!")));
-	ft_lstadd_back(&test, ft_lstnew(ft_strdup("This is!")));
-	ft_lstadd_back(&test, ft_lstnew(ft_strdup("a test")));
-    ft_lstadd_back(&test, ft_lstnew(ft_strdup("Last one")));
+	t_list	*test;
+	t_list	*temp;
+
+	test = NULL;
+	ft_lstadd_front_bonus(&test, ft_lstnew_bonus(ft_strdup("Hello World!")));
+	ft_lstadd_back_bonus(&test, ft_lstnew_bonus(ft_strdup("This is!")));
+	ft_lstadd_back_bonus(&test, ft_lstnew_bonus(ft_strdup("a test")));
 	temp = test;
-    while(temp)
+	while(temp)
 	{
 		printf("%s\n", (char *)temp->content);
-        temp = temp->next;
+		temp = temp->next;
 	}
-	ft_lstclear(&test, delete_node);
+	ft_lstclear_bonus(&test, delete_node);
 	if(!test)
 		printf("%s\n", "memory cleared");
 }
+ */

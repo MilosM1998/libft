@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmilicev <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 11:42:33 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/21 11:42:36 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/22 00:19:16 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew_bonus(void *content)
 {
 	t_list	*new;
 
@@ -30,6 +30,6 @@ int	main(void)
 	char	*str;
 
 	str = "Hello World!";
-	test = ft_lstnew(str);
+	test = ft_lstnew_bonus(str);
 	printf("%s\n", (char *)test->content);
 }*/
