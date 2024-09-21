@@ -6,7 +6,7 @@
 /*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:18:04 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/21 11:33:51 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/21 11:36:15 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ t_list	*ft_lstnew(void *content)
 	new->next = NULL;
 	return (new);
 }
-#include <stdio.h>
-int main()
+/*#include <stdio.h>
+int	main(void)
 {
 	t_list	*test;
-	char *str = "Hello World!";
+	char	*str;
+
+	str = "Hello World!";
 	test = ft_lstnew(str);
 	printf("%s\n", (char *)test->content);
-}
+}*/
