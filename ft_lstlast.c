@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 12:39:27 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/21 13:15:33 by mmilicev         ###   ########.fr       */
+/*   Created: 2024/09/21 13:16:44 by mmilicev          #+#    #+#             */
+/*   Updated: 2024/09/21 13:56:37 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	size;
-
-	size = 0;
-	while (lst)
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
 	{
-		size++;
 		lst = lst->next;
 	}
-	return (size);
+	return (lst);
 }
 /* #include <stdio.h>
+
 int	main(void)
 {
-	t_list *lst;
-	int size;
+	t_list	*first;
+	t_list	*last;
 
-	lst = ft_lstnew("Hello");
-	lst->next = ft_lstnew("World!");
-	size = ft_lstsize(lst);
-	printf("%d", size);
+	first = NULL;
+	ft_lstadd_front(&first, ft_lstnew("Hello"));
+	ft_lstadd_front(&first, ft_lstnew("World!"));
+	ft_lstadd_front(&first, ft_lstnew("This is a test"));
+	last = ft_lstlast(first);
+	printf("%s", (char *)last->content);
 } */
