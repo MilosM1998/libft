@@ -6,7 +6,7 @@
 /*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:06:51 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/22 00:25:03 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/22 00:44:36 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void				ft_lstadd_back_bonus(t_list **lst, t_list *new);
 void				ft_lstadd_front_bonus(t_list **lst, t_list *new);
 int					ft_lstsize_bonus(t_list *lst);
 void				ft_lstclear_bonus(t_list **lst, void (*del)(void *));
+void				ft_lstiter_bonus(t_list *lst, void (*f)(void *));
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
