@@ -6,7 +6,7 @@
 #    By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/07 14:09:47 by mmilicev          #+#    #+#              #
-#    Updated: 2024/09/21 11:21:05 by mmilicev         ###   ########.fr        #
+#    Updated: 2024/09/21 11:31:10 by mmilicev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen
 
 OBJ = $(SRC:.c=.o)
 
-BONUS_SRC = ft_lstadd.c
+BONUS_SRC = ft_lstnew.c
 
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
