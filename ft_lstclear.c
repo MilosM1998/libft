@@ -6,7 +6,7 @@
 /*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 22:41:27 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/21 23:15:09 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/22 00:10:05 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = NULL;
 }
-/* void    delete_node(void *content)
+void    delete_node(void *content)
 {
 	free(content);
 }
@@ -36,17 +36,20 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 int	main(void)
 {
 	t_list  *test;
-
-	test = malloc(sizeof(char) * 27);
-	ft_lstadd_front(&test, ft_lstnew("Hello World!"));
-	ft_lstadd_back(&test, ft_lstnew("This is!"));
-	ft_lstadd_back(&test, ft_lstnew("a test"));
-	while(test)
+    t_list *temp;
+    
+	test = malloc(sizeof(t_list));
+	ft_lstadd_front(&test, ft_lstnew(ft_strdup("Hello World!")));
+	ft_lstadd_back(&test, ft_lstnew(ft_strdup("This is!")));
+	ft_lstadd_back(&test, ft_lstnew(ft_strdup("a test")));
+    ft_lstadd_back(&test, ft_lstnew(ft_strdup("Last one")));
+	temp = test;
+    while(temp)
 	{
-		printf("%s\n", (char *)test->content);
-		test = test->next;
+		printf("%s\n", (char *)temp->content);
+        temp = temp->next;
 	}
 	ft_lstclear(&test, delete_node);
 	if(!test)
 		printf("%s\n", "memory cleared");
-} */
+}
