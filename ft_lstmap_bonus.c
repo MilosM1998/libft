@@ -6,7 +6,7 @@
 /*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 16:33:41 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/22 18:41:56 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/22 20:17:44 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ t_list	*ft_lstmap_bonus(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst || !f || !del)
 		return (NULL);
-	new_lst = NULL;
 	while (lst)
 	{
 		new_node = ft_lstnew_bonus(f(lst->content));
@@ -34,7 +33,7 @@ t_list	*ft_lstmap_bonus(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (new_lst);
 }
 
-void	*change_node(void *content)
+/* void	*change_node(void *content)
 {
 	char	*old_str;
 	char	*new;
@@ -54,7 +53,7 @@ void	*change_node(void *content)
 	return (new);
 }
 
-/* void	del(void *content)
+void	del(void *content)
 {
 	free(content);
 }
@@ -84,4 +83,6 @@ int	main(void)
 		printf("%s\n", (char *)curr->content);
 		curr = curr->next;
 	}
+    ft_lstclear_bonus(&new, del);
+    ft_lstclear_bonus(&old, del);
 } */
