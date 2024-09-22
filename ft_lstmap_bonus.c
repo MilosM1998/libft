@@ -6,7 +6,7 @@
 /*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 16:33:41 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/22 18:17:49 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/22 18:41:56 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,38 +50,38 @@ void	*change_node(void *content)
 		new[i] = old_str[i];
 		i++;
 	}
+	new[i] = '\0';
 	return (new);
 }
 
-void	del(void *content)
+/* void	del(void *content)
 {
 	free(content);
 }
 #include <stdio.h>
+
 int	main(void)
 {
 	t_list *old;
 	t_list *new;
-    t_list *curr;
-    
-    old = NULL;
-    ft_lstadd_back_bonus(&old, ft_lstnew_bonus("Hello"));
-    ft_lstadd_back_bonus(&old, ft_lstnew_bonus("World"));
-    printf("old:\n");
-    curr = old;
-    while(curr)
-    {
-        printf("%s\n",(char *)curr->content);
-        curr = curr->next;
-    }
-    new = ft_lstmap_bonus(old, change_node, del);
-    printf("New:\n");
-    curr = new;
-    while(curr)
-    {
-        printf("%s\n", (char *)curr->content);
-        curr = curr->next;
-    }
-    ft_lstclear_bonus(&old, del);
-    ft_lstclear_bonus(&new, del); 
-}
+	t_list *curr;
+
+	old = NULL;
+	ft_lstadd_back_bonus(&old, ft_lstnew_bonus("Hello"));
+	ft_lstadd_back_bonus(&old, ft_lstnew_bonus("World"));
+	printf("old:\n");
+	curr = old;
+	while (curr)
+	{
+		printf("%s\n", (char *)curr->content);
+		curr = curr->next;
+	}
+	new = ft_lstmap_bonus(old, change_node, del);
+	printf("New:\n");
+	curr = new;
+	while (curr)
+	{
+		printf("%s\n", (char *)curr->content);
+		curr = curr->next;
+	}
+} */

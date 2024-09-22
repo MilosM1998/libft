@@ -6,7 +6,7 @@
 /*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 22:35:22 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/22 00:20:05 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/22 18:29:10 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstdelone_bonus(t_list *lst, void (*del)(void *))
 	del(lst->content);
 	free(lst);
 }
-/*void	delete_node(void *content)
+/* void	delete_node(void *content)
 {
 	free(content);
 }
@@ -38,4 +38,5 @@ int	main(void)
 		printf("Succesfully deleted memory.\n");
 	else
 		printf("lstdelone functions doesn't work.\n");
-}*/
+}
+ */
