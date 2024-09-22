@@ -6,7 +6,7 @@
 /*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:06:51 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/22 00:44:36 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/22 18:09:38 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_list
 
 t_list				*ft_lstnew_bonus(void *content);
 t_list				*ft_lstlast_bonus(t_list *lst);
+t_list				*ft_lstmap_bonus(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void				ft_lstdelone_bonus(t_list *lst, void (*del)(void *));
 void				ft_lstadd_back_bonus(t_list **lst, t_list *new);
 void				ft_lstadd_front_bonus(t_list **lst, t_list *new);
