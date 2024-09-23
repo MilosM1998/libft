@@ -6,7 +6,7 @@
 /*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:06:51 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/22 18:41:30 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/23 20:10:04 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-t_list				*ft_lstnew_bonus(void *content);
-t_list				*ft_lstlast_bonus(t_list *lst);
-t_list				*ft_lstmap_bonus(t_list *lst, void *(*f)(void *),
+t_list				*ft_lstnew(void *content);
+t_list				*ft_lstlast(t_list *lst);
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-void				ft_lstdelone_bonus(t_list *lst, void (*del)(void *));
-void				ft_lstadd_back_bonus(t_list **lst, t_list *new);
-void				ft_lstadd_front_bonus(t_list **lst, t_list *new);
-int					ft_lstsize_bonus(t_list *lst);
-void				ft_lstclear_bonus(t_list **lst, void (*del)(void *));
-void				ft_lstiter_bonus(t_list *lst, void (*f)(void *));
+void				ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstadd_back(t_list **lst, t_list *new);
+void				ft_lstadd_front(t_list **lst, t_list *new);
+int					ft_lstsize(t_list *lst);
+void				ft_lstclear(t_list **lst, void (*del)(void *));
+void				ft_lstiter(t_list *lst, void (*f)(void *));
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);

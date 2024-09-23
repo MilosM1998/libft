@@ -6,83 +6,98 @@
 /*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 16:33:41 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/22 20:17:44 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/23 20:11:59 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap_bonus(t_list *lst, void *(*f)(void *), void (*del)(void *))
+static int	alloc_checker(t_list *new_lst, void *content, void (*del)(void *))
+{
+	if (!content)
+	{
+		ft_lstclear(&new_lst, del);
+		return (0);
+	}
+	return (1);
+}
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
 	t_list	*new_node;
+	void	*new_content;
 
+	new_lst = NULL;
 	if (!lst || !f || !del)
 		return (NULL);
 	while (lst)
 	{
-		new_node = ft_lstnew_bonus(f(lst->content));
-		if (!new_node)
+		new_content = f(lst->content);
+		if (!alloc_checker(new_lst, new_content, del))
+			return (NULL);
+		new_node = ft_lstnew(new_content);
+		if (!alloc_checker(new_lst, new_node, del))
 		{
-			ft_lstclear_bonus(&new_lst, del);
+			del(new_content);
 			return (NULL);
 		}
-		ft_lstadd_back_bonus(&new_lst, new_node);
+		ft_lstadd_back(&new_lst, new_node);
 		lst = lst->next;
 	}
 	return (new_lst);
 }
-
-/* void	*change_node(void *content)
+/*
+void	*copy_node(void *content)
 {
-	char	*old_str;
-	char	*new;
-	size_t	i;
+   char	*old_str;
+   char	*new;
+   size_t	i;
 
-	i = 0;
-	old_str = (char *)content;
-	new = malloc(sizeof(char) * ft_strlen(content) + 1);
-	if (!new)
+   i = 0;
+   old_str = (char *)content;
+   new = malloc(sizeof(char) * ft_strlen(content) + 1);
+   if (!new)
 		return (NULL);
-	while (old_str[i])
-	{
+   while (old_str[i])
+   {
 		new[i] = old_str[i];
 		i++;
-	}
-	new[i] = '\0';
-	return (new);
+   }
+   new[i] = '\0';
+   return (new);
 }
-
 void	del(void *content)
 {
-	free(content);
+   free(content);
 }
 #include <stdio.h>
 
 int	main(void)
 {
-	t_list *old;
-	t_list *new;
-	t_list *curr;
+   t_list *old;
+   t_list *new;
+   t_list *curr;
 
-	old = NULL;
-	ft_lstadd_back_bonus(&old, ft_lstnew_bonus("Hello"));
-	ft_lstadd_back_bonus(&old, ft_lstnew_bonus("World"));
-	printf("old:\n");
-	curr = old;
-	while (curr)
-	{
+   old = NULL;
+   ft_lstadd_back(&old, ft_lstnew(ft_strdup("Hello")));
+   ft_lstadd_back(&old, ft_lstnew(ft_strdup("World")));
+   printf("old:\n");
+   curr = old;
+   while (curr)
+   {
 		printf("%s\n", (char *)curr->content);
 		curr = curr->next;
-	}
-	new = ft_lstmap_bonus(old, change_node, del);
-	printf("New:\n");
-	curr = new;
-	while (curr)
-	{
+   }
+   new = ft_lstmap(old, copy_node, del);
+   printf("New:\n");
+   curr = new;
+   while (curr)
+   {
 		printf("%s\n", (char *)curr->content);
 		curr = curr->next;
-	}
-    ft_lstclear_bonus(&new, del);
-    ft_lstclear_bonus(&old, del);
-} */
+   }
+   ft_lstclear(&old, del);
+   ft_lstclear(&new, del);
+   ft_lstclear(&curr, del);
+}  */

@@ -6,13 +6,13 @@
 /*   By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 00:30:20 by mmilicev          #+#    #+#             */
-/*   Updated: 2024/09/22 01:08:35 by mmilicev         ###   ########.fr       */
+/*   Updated: 2024/09/23 20:06:48 by mmilicev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter_bonus(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst)
 	{
@@ -30,8 +30,8 @@ int	main(void)
 	t_list  *test;
 
 	test = NULL;
-	ft_lstadd_front_bonus(&test, ft_lstnew_bonus("hello"));
-	ft_lstadd_back_bonus(&test, ft_lstnew_bonus("world"));
-	ft_lstiter_bonus(test, print_node);
+	ft_lstadd_front(&test, ft_lstnew("hello"));
+	ft_lstadd_back(&test, ft_lstnew("world"));
+	ft_lstiter(test, print_node);
 
 } */

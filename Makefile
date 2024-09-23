@@ -6,7 +6,7 @@
 #    By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/07 14:09:47 by mmilicev          #+#    #+#              #
-#    Updated: 2024/09/22 18:11:40 by mmilicev         ###   ########.fr        #
+#    Updated: 2024/09/23 20:10:23 by mmilicev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ BONUS_SRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstl
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 $(NAME): $(OBJ)
-	$(AR) $(NAME) $(OBJ)
+	$(AR) $(NAME) $(OBJ) 
 
 %.o: %.c
 	$(CC) -c  $(CFLAGS) $?
@@ -39,7 +39,7 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 bonus: $(OBJ) $(BONUS_OBJ)
-	$(AR) $(NAME) $(OBJ) $(BONUS_OBJ)
+	$(AR) $(NAME) $(OBJ) $(BONUS_OBJ) 
 
 clean: 
 	rm -f $(OBJ) $(BONUS_OBJ)
