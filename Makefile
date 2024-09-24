@@ -6,7 +6,7 @@
 #    By: mmilicev <mmilicev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/07 14:09:47 by mmilicev          #+#    #+#              #
-#    Updated: 2024/09/23 20:10:23 by mmilicev         ###   ########.fr        #
+#    Updated: 2024/09/24 19:21:08 by mmilicev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,12 +34,12 @@ $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ) 
 
 %.o: %.c
-	$(CC) -c  $(CFLAGS) $?
+	$(CC) -c  $(CFLAGS) $<
 
 all: $(NAME)
 
-bonus: $(OBJ) $(BONUS_OBJ)
-	$(AR) $(NAME) $(OBJ) $(BONUS_OBJ) 
+bonus: $(NAME) $(BONUS_OBJ)
+	$(AR) $(NAME) $(BONUS_OBJ) 
 
 clean: 
 	rm -f $(OBJ) $(BONUS_OBJ)
